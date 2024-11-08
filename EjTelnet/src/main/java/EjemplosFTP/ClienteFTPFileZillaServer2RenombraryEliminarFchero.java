@@ -7,9 +7,9 @@ import org.apache.commons.net.ftp.*;
 public class ClienteFTPFileZillaServer2RenombraryEliminarFchero {
 	public static void main(String[] args) {
 		FTPClient cliente = new FTPClient();
-		String servidor = "localhost";
-		String user = "usertar";
-		String pasw = "usertar";
+		String servidor = "172.26.131.120";
+		String user = "userman";
+		String pasw = "userman";
 		try {
 			System.out.println("Conectándose a " + servidor);
 			cliente.connect(servidor);
@@ -34,14 +34,14 @@ public class ClienteFTPFileZillaServer2RenombraryEliminarFchero {
 				//Renombrar fichero
 				direc="/NUEVODIREC";
 				cliente.changeWorkingDirectory(direc);
-				if(cliente.rename("EJEMPLO.pdf", "EJEMPLO1.pdf")) 
+				if(cliente.rename("hola (1).txt", "ahmed.txt")) 
 					System.out.println("Fichero renombrado... ");
 				else
 					System.out.println("No se ha podido renombar el Fichero... ");
 				System.out.println("\nDespués de renombrar el fichero: ");
 				VerFicheros(cliente);
 				//eliminar fichero
-				String fichero = "/NUEVODIREC/EJEMPLO1.pdf";
+				String fichero = "/NUEVODIREC/ahmed.txt";
 				if(cliente.deleteFile(fichero)) 
 					System.out.println("Fichero eliminado... ");
 				else
