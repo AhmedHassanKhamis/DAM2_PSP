@@ -35,7 +35,7 @@ public class ClienteFTPFileZillaServer5Swing extends JFrame {
 	
     //Datos del servidor FTP
 	static FTPClient cliente = new FTPClient();//cliente FTP
-	String servidor = "localhost";
+	String servidor = "172.26.131.120";
 	String user = "usertar";
 	String pasw = "usertar";
 	boolean login;

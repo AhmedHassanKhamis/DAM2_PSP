@@ -7,7 +7,7 @@ import org.apache.commons.net.ftp.*;
 public class ClienteFTPFileZillaServer3SubirFichero {
 	public static void main(String[] args) {
 		FTPClient cliente = new FTPClient();
-		String servidor = "localhost";
+		String servidor = "172.26.131.120";
 		String user = "usertar";
 		String pasw = "usertar";
 
@@ -33,10 +33,10 @@ public class ClienteFTPFileZillaServer3SubirFichero {
 				}
 				System.out.println("Directorio actual: " + cliente.printWorkingDirectory());
 
-				String archivo = "/home/usertar/EJEMPLO.pdf"; // O cualquiera.
+				String archivo = "/home/usertar/empleados.json"; // O cualquiera.
 				BufferedInputStream in = new BufferedInputStream(new FileInputStream(archivo));
 
-				if (cliente.storeFile("EJEMPLO.pdf", in)) // Nombre a almacenar
+				if (cliente.storeFile("ejemplos.json", in)) // Nombre a almacenar
 					System.out.println("Subido correctamente... ");
 				else
 					System.out.println("No se ha podido subir el fichero... ");
