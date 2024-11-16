@@ -1,0 +1,38 @@
+Comparativa y Uso de SOAP y REST
+
+SOAP (Simple Object Access Protocol) y REST (Representational State Transfer) son dos enfoques diferentes para la creación de servicios web. A continuación se presenta una comparativa entre ambos:
+
+1. **Protocolo**:
+    - **SOAP**: Es un protocolo basado en XML que sigue un estándar rígido para la comunicación entre aplicaciones.
+    - **REST**: No es un protocolo, sino un estilo arquitectónico que utiliza HTTP y otros estándares para la comunicación.
+
+2. **Formato de Mensaje**:
+    - **SOAP**: Utiliza exclusivamente XML para el formato de sus mensajes.
+    - **REST**: Puede utilizar múltiples formatos como JSON, XML, HTML, y texto plano.
+
+3. **Estilo de Comunicación**:
+    - **SOAP**: Es más adecuado para operaciones complejas y transacciones empresariales que requieren seguridad y transacciones ACID.
+    - **REST**: Es más adecuado para operaciones CRUD (Crear, Leer, Actualizar, Eliminar) y es más ligero y rápido debido a su menor sobrecarga.
+
+4. **Estado**:
+    - **SOAP**: Es sin estado, pero puede mantener el estado a través de WS-Security.
+    - **REST**: Es sin estado, lo que significa que cada solicitud del cliente al servidor debe contener toda la información necesaria para entender y procesar la solicitud.
+
+5. **Seguridad**:
+    - **SOAP**: Ofrece seguridad a nivel de mensaje a través de WS-Security.
+    - **REST**: Depende de la seguridad del protocolo de transporte (HTTPS) para la seguridad.
+
+6. **Transacciones**:
+    - **SOAP**: Soporta transacciones a través de WS-AtomicTransaction.
+    - **REST**: No tiene soporte nativo para transacciones, pero se pueden implementar a nivel de aplicación.
+
+7. **Facilidad de Uso**:
+    - **SOAP**: Requiere herramientas y bibliotecas específicas para su implementación y es más complejo de configurar.
+    - **REST**: Es más fácil de usar y puede ser consumido por cualquier cliente HTTP estándar.
+
+8. **Compatibilidad**:
+    - **SOAP**: Es compatible con cualquier protocolo de transporte como HTTP, SMTP, TCP, etc.
+    - **REST**: Principalmente utiliza HTTP.
+
+En resumen, la elección entre SOAP y REST depende de los requisitos específicos del proyecto. SOAP es ideal para aplicaciones empresariales que requieren seguridad y transacciones complejas,
+ mientras que REST es más adecuado para aplicaciones web y móviles que necesitan ser rápidas y ligeras.

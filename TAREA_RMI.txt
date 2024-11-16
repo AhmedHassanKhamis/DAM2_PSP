@@ -1,0 +1,35 @@
+Remote Method Invocation (RMI)
+
+Remote Method Invocation (RMI) es una tecnología de Java que permite a los 
+objetos en una máquina virtual Java (JVM) invocar métodos en objetos ubicados 
+en otra JVM. Esta capacidad es fundamental para la construcción de aplicaciones 
+distribuidas, donde los componentes de la aplicación pueden estar dispersos en 
+diferentes ubicaciones geográficas pero necesitan interactuar como si estuvieran 
+en la misma máquina.
+
+RMI facilita la comunicación entre objetos distribuidos al proporcionar una 
+abstracción de alto nivel que oculta los detalles de la red y la serialización 
+de objetos. Los desarrolladores pueden invocar métodos en objetos remotos de la 
+misma manera que lo harían con objetos locales, lo que simplifica el desarrollo 
+de aplicaciones distribuidas.
+
+Componentes de RMI:
+1. **Interfaz Remota**: Define los métodos que pueden ser invocados remotamente. 
+    Esta interfaz debe extender `java.rmi.Remote`.
+2. **Implementación Remota**: La clase que implementa la interfaz remota. Debe 
+    extender `java.rmi.server.UnicastRemoteObject` y manejar las excepciones 
+    `RemoteException`.
+3. **Cliente**: El programa que invoca métodos en el objeto remoto. Utiliza el 
+    servicio de nombres RMI para localizar el objeto remoto.
+4. **Registro RMI**: Un servicio de nombres que permite a los clientes localizar 
+    objetos remotos por nombre.
+
+Proceso de RMI:
+1. **Definición de la Interfaz Remota**: Se define una interfaz que extiende 
+    `java.rmi.Remote` y declara los métodos que pueden ser invocados remotamente.
+2. **Implementación del Servidor**: Se implementa la interfaz remota y se extiende 
+    `UnicastRemoteObject`. El servidor registra el objeto remoto con el registro RMI.
+3. **Implementación del Cliente**: El cliente busca el objeto remoto en el registro 
+    RMI y llama a los métodos remotos como si fueran locales.
+
+Ejemplo de RMI:
