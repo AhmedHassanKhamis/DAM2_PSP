@@ -1,0 +1,3 @@
+grant codeBase "file:/home/usertar/Escritorio/000_CLASE/DAM2_PSP/UT3_Ejemplos/"{ 
+    permission java.io.FilePermission "/home/usertar/Escritorio/000_CLASE/DAM2_PSP/UT3_Ejemplos/*", "read,write";
+}; 

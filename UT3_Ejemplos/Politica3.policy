@@ -1,0 +1,4 @@
+grant codeBase "file:C:/UT3_Ejemplos/" {
+  permission java.net.SocketPermission "localhost:6000", "connect";
+};
+

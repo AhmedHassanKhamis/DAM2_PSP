@@ -1,0 +1,8 @@
+javac EjemploLoginModule.java
+javac MyCallbackHandler.java
+javac MainJaasAutenticacion.java
+
+java -Dusuario=maria -Dclave=1234 -Djava.security.manager -Djava.security.policy=policy.config -Djava.security.auth.login.config=jaas.config MainJaasAutenticacion
+
+
+java -Dusuario=maria -Dclave=12345 -Djava.security.manager -Djava.security.policy=policy.config -Djava.security.auth.login.config=jaas.config MainJaasAutenticacion

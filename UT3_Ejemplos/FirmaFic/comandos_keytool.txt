@@ -1,0 +1,19 @@
+
+jar cvf Contrato.jar Contrato.pdf
+
+keytool -genkey -alias FirmaContrato -keystore AlmacenClaves -storepass clavealma
+
+keytool -list -keystore AlmacenClaves
+
+jarsigner -keystore AlmacenClaves -signedjar ContratoFirmado.jar Contrato.jar FirmaContrato -storepass clavealma
+
+
+keytool -export -keystore AlmacenClaves -alias FirmaContrato -file MariaJesus.cer -storepass clavealma
+
+keytool -import -alias MJesus -file MariaJesus.cer -keystore AlmacenReceptor -storepass clavereceptor
+
+
+keytool -printcert -file MariaJesus.cer
+
+jarsigner -verify -verbose -certs -keystore AlmacenReceptor ContratoFirmado.jar -storepass clavereceptor
+
