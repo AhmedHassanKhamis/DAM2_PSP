@@ -1,7 +1,7 @@
 import java.io.*;
 import java.security.*;
 
-public class Ejemplo5 {
+public class Ejercicio2B {
 	public static void main(String args[]) {
 		try {
 			FileOutputStream fileout = new FileOutputStream("DATOS.DAT");
