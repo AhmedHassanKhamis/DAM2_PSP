@@ -1,6 +1,6 @@
 import java.net.*;
 public class Ejemplo3  {
-  public static void main(String[] args) {
+  public statEjercicio2main(String[] args) {
 	String Host = "localhost";
 	int Puerto = 6000;//puerto remoto		
 	//System.setSecurityManager(new SecurityManager());	
