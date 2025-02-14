@@ -20,7 +20,7 @@ public class EjemploHiloPrioridad1 {
 
     h1.pararHilo() ;
     h2.pararHilo() ;
-	h3.pararHilo() ;
+	  h3.pararHilo() ;
 	
     System.out.println("h2 (Prioridad Maxima): " + h2.getContador());
 	System.out.println("h1 (Prioridad Normal): " + h1.getContador());  	
