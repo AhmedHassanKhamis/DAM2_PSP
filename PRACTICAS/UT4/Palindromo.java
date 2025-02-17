@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Ejercicio1 {
+public class Palindromo {
 	public static void main(String[] args) throws IOException {
 
 		// creamos objeto File al directorio donde esta Ejemplo2
