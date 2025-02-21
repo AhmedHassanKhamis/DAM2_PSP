@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
-public class EjecutaPorPantallaAHK {
+public class EjecutaPorFicheroAHK {
     public static void main(String[] args) {
         
         File directorioAHK = new File("./"); // O si está en el CLASSPATH (".\\bin");
@@ -13,19 +13,18 @@ public class EjecutaPorPantallaAHK {
         // Crear el proceso correctamente
         ProcessBuilder pbAHK = new ProcessBuilder("java", "PalindromoAHK");  // Debe encontrar la clase.
         pbAHK.directory(directorioAHK);
-        pbAHK.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+        
+        // Redirección de archivos de entrada, salida y error
+        File fEntradaAHK = new File("entrada.txt");
+        pbAHK.redirectInput(fEntradaAHK);
+        File fSalidaAHK = new File("salida.txt");
+        pbAHK.redirectOutput(fSalidaAHK);
         File fErrAHK = new File("error.txt");
         pbAHK.redirectError(fErrAHK);
 
         try {
             // Se ejecuta el proceso
             Process pAHK = pbAHK.start();
-
-            // Enviar entrada al proceso a través de su OutputStream
-            OutputStream osAHK = pAHK.getOutputStream();
-            osAHK.write("eje".getBytes());  // Enviar texto "ana"
-            osAHK.flush(); // vacía el buffer de salida
-            osAHK.close(); // Cerrar el OutputStream
 
             // Leer la salida estándar del proceso
             InputStream isAHK = pAHK.getInputStream();
@@ -43,10 +42,10 @@ public class EjecutaPorPantallaAHK {
                 System.out.println("ERROR >" + linerAHK);
             }
             brerAHK.close();
-            
-            // Esperar a que el proceso termine y obtener el código de salida
-            int exitCodeAHK = pAHK.waitFor();
-            System.out.println("\nProcess exited with code: " + exitCodeAHK);
+
+            // Comprobación de error - 0 bien - 1 mal
+            int exitValAHK = pAHK.waitFor();
+            System.out.println("Valor de Salida: " + exitValAHK);
 
         } catch (IOException | InterruptedException ioeAHK) {
             ioeAHK.printStackTrace();

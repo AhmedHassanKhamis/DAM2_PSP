@@ -1,0 +1,2 @@
+Introduce una palabra o cadena:
+Es palíndroma:ana

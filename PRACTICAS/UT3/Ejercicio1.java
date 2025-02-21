@@ -1,4 +1,4 @@
-import java.security.*;
+import java.sEjercicio1A
 import java.util.Scanner;
 
 public class Ejercicio1 {

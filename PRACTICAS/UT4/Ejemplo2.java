@@ -2,8 +2,11 @@ import java.io.*;
 
 public class Ejemplo2 {
 	public static void main(String[] args) throws IOException {
+		File directorio = new File("./");	
 
-		Process p = new ProcessBuilder("ls").start();
+		Process p = new ProcessBuilder("ls");
+		p.directory(directorio);
+		p.start();
 		try {
 
 			InputStream is = p.getInputStream();

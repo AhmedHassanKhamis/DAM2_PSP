@@ -1,34 +1,23 @@
 import java.io.*;
 
-public class Ejercicio5 {
+public class Ejemplo5 {
 
 	public static void main(String[] args) throws IOException {
 
 		File directorio = new File("./"); // O si está en el CLASSPATH (".\\bin");
-		ProcessBuilder pb = new ProcessBuilder("java", "EjemploLectura.java");  // Debe encontrar la clase.
+		ProcessBuilder pb = new ProcessBuilder("java", "EjemploLectura");  // Debe encontrar la clase.
 
 		// ProcessBuilder pb = new ProcessBuilder("java", "EjemploLectura");  // Debe encontrar la clase.
 
 		pb.directory(directorio);
 
-		
-		File fBat = new File("entrada.txt");
-		pb.redirectInput(fBat);
-		// File fOut = new File("salida.txt");
-		// pb.redirectOutput(fOut);
-		pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-		File fErr = new File("error.txt");
-		pb.redirectError(fErr);
-
 		// se ejecuta el proceso
 		Process p = pb.start();
 
-		
-
-		// // escritura -- envia entrada 
-		// OutputStream os = p.getOutputStream();
-		// os.write("Hola Manuel\n".getBytes());
-		// os.flush(); // vacía el buffer de salida
+		// escritura -- envia entrada 
+		OutputStream os = p.getOutputStream();
+		os.write("Hola Manuel\n".getBytes());
+		os.flush(); // vacía el buffer de salida
 
 		// lectura -- obtiene la salida
 		InputStream is = p.getInputStream();
